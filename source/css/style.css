@@ -1,0 +1,75 @@
+*{
+    background: #F3F5FC;
+    color: #0A3871;
+    font-family: Inter;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 48px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+header{
+    position: static;
+    width: 100vw;
+    height: 16vh;
+    display: flex;
+    align-items: center;
+}
+main{
+    width: 100vw;
+    height: 84vh;
+    display: inline-block;
+}
+section{
+    display: grid;
+    place-items: center;
+    width: 100vh;
+    height: 100%;
+}
+div{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.logo{
+    position: absolute;
+    left: 8vh;
+}
+.area_texto{
+    background: #F3F5FC;
+    border: none;
+    color: #0A3871;
+    font-family: Inter;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 48px;
+    letter-spacing: 0em;
+    text-transform: lowercase;
+    text-align: center;
+}
+::placeholder{
+    color: #0A3871;
+    text-align: center;
+}
+.area_texto:focus{
+    outline: none;
+}
+.boton_encriptar{
+    width: 60vh;
+    background: #0A3871;
+    border: 1px solid #0A3871;
+    border-radius: 24px;
+    color: #F3F5FC;
+    text-align: center;
+}
+
+.boton_desencriptar{
+    width: 60vh;
+    background: #F3F5FC;
+    border: 1px solid #0A3871;
+    border-radius: 24px;
+    color: #0A3871;
+    text-align: center;
+}
