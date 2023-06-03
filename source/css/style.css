@@ -1,7 +1,3 @@
-body{
-    width: 100vw;
-    height: 100vh;
-}
 *{
     background: #F3F5FC;
     color: #0A3871;
@@ -14,17 +10,17 @@ body{
 }
 header{
     width: 100%;
-    height: 16%;
+    height: 16vh;
     display: flex;
     align-items: center;
-    justify-content: left;
+    justify-content: space-between;
 
 }
 main{
     display: flex;
     justify-content: space-evenly;
     width: 100%;
-    height: 84%;
+    height: 84vh;
 }
 
 section{
@@ -45,7 +41,12 @@ div{
 button{
     font-size: 2vw;
 }
-
+.logo_alura{
+    margin-left: 8%;
+}
+.contactos{
+    width: 20%;
+}
 .area_texto{
     background: none;
     border-radius: 10%;
@@ -62,15 +63,6 @@ button{
     text-align: center;
     resize: none;
 }
-
-.logo_alura{
-    margin-left: 8%;
-}
-.logo_github{
-    margin-left: 8%;
-    width: 70px;
-}
-
 ::placeholder{
     color: #0A3871;
     text-align: center;
@@ -138,25 +130,26 @@ button{
       height: 50%;
     }
     button { 
-        margin-top: 1vh;
         font-size: 5vw;
+    }
+    .area_texto{
+        border-radius: 0;
+        height: 75%;
+    }
+    .botones {
+        flex-direction: column;
+        justify-content: center;
+        gap: 1vh;
+        height: 25%;
+
     }
     .boton_encriptar, .boton_desencriptar, .boton_copiar{
         width: 90%;
     }
-    .area_texto{
-        border-radius: 0;
-    }
     .mensaje{
         width: 90%;
         margin: 0 0 0 0;
-        height: 40%;
     }
-
-    .botones {
-        flex-direction: column;
-    }
-
     .area_texto#output{
         background-image: url(../imagen/mensaje_alura_placeholder.png);
     }
