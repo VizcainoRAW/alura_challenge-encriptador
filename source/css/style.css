@@ -13,11 +13,12 @@ body{
     text-align: left;
 }
 header{
-    position: static;
     width: 100%;
     height: 16%;
     display: flex;
     align-items: center;
+    justify-content: left;
+
 }
 main{
     display: flex;
@@ -25,6 +26,7 @@ main{
     width: 100%;
     height: 84%;
 }
+
 section{
     display: flex;
     flex-direction: column;
@@ -34,11 +36,14 @@ section{
     height: 100%;
 }
 div{
-    background: local;
+    background: none;
     width: 100%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+}
+button{
+    font-size: 2vw;
 }
 
 .area_texto{
@@ -58,11 +63,13 @@ div{
     resize: none;
 }
 
-.logo{
-    position: absolute;
-    left: 8%;
+.logo_alura{
+    margin-left: 8%;
 }
-
+.logo_github{
+    margin-left: 8%;
+    width: 70px;
+}
 
 ::placeholder{
     color: #0A3871;
@@ -91,9 +98,8 @@ div{
     text-align: center;
 }
 .mensaje{
-    width: 60%;
+    width: 70%;
     height: 95%;
-    margin-left: 25%;
     background-color: #FFFFFF;
     display: flex;
     flex-direction: column;
@@ -107,16 +113,51 @@ div{
     background-position: center;
     background-size: auto;
     background-repeat: no-repeat;
+    pointer-events: none;
     overflow: hidden;
 }
 
 .boton_copiar{
     width: 40%;
     background: #F3F5FC;
-    font-size: 1em;
     overflow: hidden;
     border: 1px solid #0A3871;
     border-radius: 24px;
     color: #0A3871;
     text-align: center;
 }
+
+
+@media (max-width: 767px) {
+    main{
+        height: 168vh;
+        flex-direction: column;
+    }
+    section {
+      width: 100%;
+      height: 50%;
+    }
+    button { 
+        margin-top: 1vh;
+        font-size: 5vw;
+    }
+    .boton_encriptar, .boton_desencriptar, .boton_copiar{
+        width: 90%;
+    }
+    .area_texto{
+        border-radius: 0;
+    }
+    .mensaje{
+        width: 90%;
+        margin: 0 0 0 0;
+        height: 40%;
+    }
+
+    .botones {
+        flex-direction: column;
+    }
+
+    .area_texto#output{
+        background-image: url(../imagen/mensaje_alura_placeholder.png);
+    }
+  }
