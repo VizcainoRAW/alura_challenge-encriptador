@@ -21,16 +21,17 @@
         <main>
             <section class="input">
                     <textarea  class="area_texto" id="input" cols="30" rows="10" placeholder="Ingrese el texto aqui"></textarea>
+   
                 <div class="botones">
                     <button class="boton_encriptar" onclick="botonEncriptar()" >Encriptar</button>
-                    <button class="boton_desencriptar">Desencriptar</button>
+                    <button class="boton_desencriptar" onclick="botonDesencriptar()">Desencriptar</button>
                 </div>
             </section>
             <section class="output">
                 <div class="mensaje">
-                        <textarea class="area_texto" id="output" cols="30" rows="10" placeholder=" "></textarea>
+                        <textarea class="area_texto" id="output" cols="30" rows="10" placeholder=></textarea>
                     <div class="botones">
-                        <button class="boton_copiar">Copiar</button>
+                        <button class="boton_copiar" onclick="botonCopiar()">Copiar</button>
                     </div>
                 </div>
             </section>
