@@ -1,55 +1,67 @@
-let codigo_encriptado=[["e","enter"],["i", "imes"],["a","ai"],["o","ober"],["u","ufat"]]
-const input_texto =document.getElementById("input")
-const output_texto =document.getElementById("output")
+let encrypted_codes=[["e","enter"],["i", "imes"],["a","ai"],["o","ober"],["u","ufat"]]
+const inputText =document.getElementById("input")
+const outputText =document.getElementById("output")
 var scroll=false
 
-function encriptador(texto, selector) {
-    texto = texto.toString().toLowerCase();
-    if (selector==true){
-      console.log("encriptando")
-      for (var i = 0; i < codigo_encriptado.length; i++) {
-        if (texto.includes(codigo_encriptado[i][0])) {
-          texto = texto.replaceAll(codigo_encriptado[i][0], codigo_encriptado[i][1]);
-        }
+function encryptor(text, encrypt=true) {
+  text = text.toString().toLowerCase();
+
+  if (encrypt===true) {
+    console.log("Encrypting");
+    for (var i = 0; i < encrypted_codes.length; i++) {
+      if (text.includes(encrypted_codes[i][0])) {
+        text = text.replaceAll(encrypted_codes[i][0], encrypted_codes[i][1]);
       }
     }
-    if (selector==false){
-      console.log("desencriptando")
-      for (var i = 0; i < codigo_encriptado.length; i++) {
-        if (texto.includes(codigo_encriptado[i][1])) {
-          texto = texto.replaceAll(codigo_encriptado[i][1], codigo_encriptado[i][0]);
-        }
+  } else {
+    console.log("Decrypting");
+    for (var i = 0; i < encrypted_codes.length; i++) {
+      if (text.includes(encrypted_codes[i][1])) {
+        text = text.replaceAll(encrypted_codes[i][1], encrypted_codes[i][0]);
       }
     }
-    return texto;
+  }
+
+  return text;
 }
 function botonEncriptar(){
-  const texto_encriptado= encriptador(input_texto.value,true)
+  const texto_encriptado= encryptor(inputText.value,true)
   output.value=texto_encriptado
-  escondePlaceholder()
+  hidePlaceholder()
   scrollDown()
 }
 function botonDesencriptar(texto){
-  const texto_encriptado= encriptador(input_texto.value,false)
+  const texto_encriptado= encryptor(inputText.value,false)
   output.value=texto_encriptado
-  escondePlaceholder()
+  hidePlaceholder()
   scrollDown()
 }
-function botonCopiar(texto){
-  navigator.clipboard.writeText(output_texto.value)
-  .then(() => {
-    console.log('Texto copiado al portapapeles')
-  })
-  .catch(err => {
-    console.error('Error al copiar al portapapeles:', err)
-  })
+function copyButton() {
+  navigator.clipboard.writeText(outputText.value)
+    .then(() => {
+      console.log('Texto copiado al portapapeles');
+    })
+    .catch(err => {
+      console.error('Error al copiar al portapapeles:', err);
+    });
 }
-function escondePlaceholder(){
-  if (output_texto.value === "") {
-    output_texto.style.backgroundSize = "70%";
+function hidePlaceholder() {
+  console.log(outputText.value)
+  if (outputText.value === "") {
+    console.log("no ocultanodo")
+    outputText.style.backgroundSize = "70%";
+    setButtonVisibility(".boton_copiar",false);
+    setButtonVisibility(".clear-button",false);
   } else {
-    output_texto.style.backgroundSize = "0";
+    console.log("ocultanodo")
+    outputText.style.backgroundSize = "0";
+    setButtonVisibility(".boton_copiar",true);
+    setButtonVisibility(".clear-button",true);
   }
+}
+function clearButton(){
+  outputText.value=""
+  hidePlaceholder()
 }
 function scrollDown() {
   if(scroll===false){
@@ -58,5 +70,13 @@ function scrollDown() {
       behavior: 'smooth'
     });
     scroll=true
+  }
+}
+function setButtonVisibility(buttonClass, visibility = true) {
+  const Button = document.querySelector(buttonClass);
+  if (visibility) {
+    Button.style.display = "block";
+  } else {
+    Button.style.display = "none";
   }
 }

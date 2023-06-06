@@ -41,6 +41,7 @@ div{
     align-items: center;
 }
 button{
+    cursor: pointer;
     font-size: 2vw;
 }
 button:active {
@@ -116,12 +117,22 @@ button:active {
 }
 
 .boton_copiar{
-    width: 40%;
+    display: none;
+    width: 30%;
     background: #F3F5FC;
     overflow: hidden;
     border: 1px solid #0A3871;
     border-radius: 24px;
     color: hsl(213, 84%, 24%);
+    text-align: center;
+}
+.clear-button{
+    display: none;
+    background: #F3F5FC;
+    overflow: hidden;
+    border: 1px solid #0A3871;
+    border-radius: 24px;
+    color: hsl(0, 82%, 37%);
     text-align: center;
 }
 @media (max-width: 767px) {
@@ -136,6 +147,9 @@ button:active {
     button { 
         font-size: 5vw;
     }
+    .output{
+        justify-content: start;
+    }
     .area_texto{
         border-radius: 0;
         height: 75%;
@@ -147,8 +161,15 @@ button:active {
         height: 25%;
 
     }
-    .boton_encriptar, .boton_desencriptar, .boton_copiar{
+    .mensaje .botones{
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    .boton_encriptar, .boton_desencriptar{
         width: 90%;
+    }
+    .boton_copiar{
+        width: 30%;
     }
     .mensaje{
         width: 90%;
